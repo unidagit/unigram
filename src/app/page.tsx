@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
-  return <h1 className="text-gray-400">unigram</h1>;
+  return <h1 className="text-gray-400">홈입니다</h1>;
 }
