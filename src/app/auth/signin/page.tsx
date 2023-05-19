@@ -4,7 +4,15 @@ import { getServerSession } from "next-auth";
 import { getProviders } from "next-auth/react";
 import { redirect } from "next/navigation";
 
-export default async function SigninPage() {
+type Props = {
+  searchParams: {
+    callbackUrl: string;
+  };
+};
+
+export default async function SigninPage({
+  searchParams: { callbackUrl },
+}: Props) {
   const session = await getServerSession(authOptions); //세션에 대한 정보를 가지고 옴.
 
   if (session) {
@@ -13,5 +21,9 @@ export default async function SigninPage() {
   }
 
   const providers = (await getProviders()) ?? {}; //로그인을 안했으면 이 로직이 실행
-  return <SignIn providers={providers} />;
+  return (
+    <section className="flex justify-center mt-[30%]">
+      <SignIn providers={providers} callbackUrl={callbackUrl ?? "/"} />
+    </section>
+  );
 }
