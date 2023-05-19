@@ -22,7 +22,7 @@ export default async function SigninPage({
 
   const providers = (await getProviders()) ?? {}; //로그인을 안했으면 이 로직이 실행
   return (
-    <section className="flex justify-center mt-[30%]">
+    <section className="flex justify-center mt-24">
       <SignIn providers={providers} callbackUrl={callbackUrl ?? "/"} />
     </section>
   );
