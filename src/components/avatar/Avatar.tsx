@@ -2,8 +2,8 @@ import React from "react";
 
 type Props = {
   image?: string | null;
-  size: "small" | "normal";
-  highlight: boolean;
+  size?: "small" | "normal";
+  highlight?: boolean;
 };
 
 export default function Avatar({
