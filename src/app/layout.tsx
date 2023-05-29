@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 import { Open_Sans } from "next/font/google";
 import AuthContext from "@/context/AuthContext";
+import QueryConfigContext from "@/context/QueryConfigContext";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -22,7 +23,9 @@ export default function RootLayout({
           <header className="sticky top-0 bg-white z-10 border-b">
             <Navbar />
           </header>
-          <main className="px-6">{children}</main>
+          <main className="flex justify-center bg-neutral-50 min-h-full">
+            <QueryConfigContext>{children}</QueryConfigContext>
+          </main>
         </AuthContext>
       </body>
     </html>

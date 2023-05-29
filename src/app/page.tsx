@@ -17,12 +17,12 @@ export default async function HomePage() {
     redirect("/auth/signin"); //로그인페이지로 이동
   }
   return (
-    <section className="w-full flex flex-col md:flex-row ">
-      <div className="w-full basis-3/4">
+    <section className="w-full flex flex-col md:flex-row m-4">
+      <div className="w-full">
         <FollowingBar />
         <PostList />
       </div>
-      <div className="basis-1/4">
+      <div className="ml-8">
         <SideBar user={user} />
       </div>
     </section>
